@@ -14,6 +14,8 @@
 
 open Rrd_protocol
 
+module Ds = Rrd_idl.DS
+
 let (|>) a b = b a
 
 let now () = Int64.of_float (Unix.gettimeofday ())

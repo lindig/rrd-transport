@@ -20,6 +20,8 @@ exception No_update
 exception Payload_too_large
 exception Read_error
 
+module Ds = Rrd_idl.DS
+
 type payload = {
 	timestamp: int64;
 	datasources : (Rrd.ds_owner * Ds.ds) list;

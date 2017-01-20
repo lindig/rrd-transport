@@ -1,9 +1,9 @@
 # OASIS_START
-# DO NOT EDIT (digest: 4c18565c4d1974ea982931771463e12d)
+# DO NOT EDIT (digest: 3e0e38c258f07ea66dcdb27f86384b8a)
 version = "1.0.0"
 description = "Shared-memory protocols for transmitting RRD data"
 requires =
-"bigarray bytes cstruct stringext xcp.rrd rrd xen-gnt xen-gnt.unix crc threads"
+"bigarray bytes cstruct stringext xcp.rrd_ppx rrd xen-gnt xen-gnt.unix crc threads"
 archive(byte) = "rrd_transport.cma"
 archive(byte, plugin) = "rrd_transport.cma"
 archive(native) = "rrd_transport.cmxa"

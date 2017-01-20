@@ -98,7 +98,7 @@ let run_tests shared_file_count protocol =
 		read_payloads deliveries protocol reader_sock
 
 let () =
-	let open Rrd_interface in
+	let open Rrd_idl in
 	let shared_file_count = ref 4096 in
 	let protocol = ref V2 in
 	Arg.parse

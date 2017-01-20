@@ -13,6 +13,7 @@
  *)
 
 open Rrd_protocol
+module Ds = Rrd_idl.DS
 
 let (|>) a b = b a
 

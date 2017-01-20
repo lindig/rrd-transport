@@ -12,10 +12,12 @@
  * GNU Lesser General Public License for more details.
  *)
 
+module Ds = Rrd_idl.DS
+
 let json_of_ds ?(owner=Rrd.Host) ?(rshift=4) ds buf =
 	let open Ds in
-	let add_string str = 
-		for i=0 to rshift-1 do Buffer.add_char buf ' ' done; 
+	let add_string str =
+		for i=0 to rshift-1 do Buffer.add_char buf ' ' done;
 		Buffer.add_string buf str in
 	let json_line_string ?(last=false) n v = add_string (Printf.sprintf "  \"%s\": \"%s\"%s\n" n v (if last then "" else ","))
 	and json_line_int64  ?(last=false) n v = add_string (Printf.sprintf "  \"%s\": \"%Ld\"%s\n" n v (if last then "" else ","))
@@ -25,7 +27,7 @@ let json_of_ds ?(owner=Rrd.Host) ?(rshift=4) ds buf =
 		add_string (Printf.sprintf "\"%s\": {\n" ds.ds_name);
 		if ds.ds_description != "" then (json_line_string "description" ds.ds_description);
 		json_line_string "owner" (match owner with | Rrd.Host -> "host" | Rrd.VM vm -> "vm " ^ vm | Rrd.SR sr -> "sr " ^ sr);
-		(match ds.ds_value with 
+		(match ds.ds_value with
 			| Rrd.VT_Int64 i -> json_line_int64 "value" i; json_line_string "value_type" "int64"
 			| Rrd.VT_Float f -> json_line_float "value" f; json_line_string "value_type" "float"
 			| Rrd.VT_Unknown  -> failwith "to_json: Impossible to represent VT_Unknown type");
@@ -37,8 +39,8 @@ let json_of_ds ?(owner=Rrd.Host) ?(rshift=4) ds buf =
 		json_line_string "units" ds.ds_units;
 		json_line_float "min" ds.ds_min;
 		json_line_float ~last:true "max" ds.ds_max;
-		
-		add_string "},\n"; 
+
+		add_string "},\n";
 		(* begin *)
 		(* 	Printf.printf "====== json_of_ds ======\n%!"; *)
 		(* 	Printf.printf "%s%!" (Buffer.contents buf); *)

@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 79c485fed5a05dbe7fc94148e6f8b823)
+# DO NOT EDIT (digest: 9729fd82abc87189b257c248a9ed026d)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -23,7 +23,7 @@ true: annot, bin_annot
 <lib/*.ml{,i,y}>: pkg_rrd
 <lib/*.ml{,i,y}>: pkg_stringext
 <lib/*.ml{,i,y}>: pkg_threads
-<lib/*.ml{,i,y}>: pkg_xcp.rrd
+<lib/*.ml{,i,y}>: pkg_xcp.rrd_ppx
 <lib/*.ml{,i,y}>: pkg_xen-gnt
 <lib/*.ml{,i,y}>: pkg_xen-gnt.unix
 # Executable rrdreader
@@ -35,7 +35,7 @@ true: annot, bin_annot
 <utils/reader.{native,byte}>: pkg_rrd
 <utils/reader.{native,byte}>: pkg_stringext
 <utils/reader.{native,byte}>: pkg_threads
-<utils/reader.{native,byte}>: pkg_xcp.rrd
+<utils/reader.{native,byte}>: pkg_xcp.rrd_ppx
 <utils/reader.{native,byte}>: pkg_xen-gnt
 <utils/reader.{native,byte}>: pkg_xen-gnt.unix
 <utils/reader.{native,byte}>: use_rrd_transport
@@ -48,7 +48,7 @@ true: annot, bin_annot
 <utils/writer.{native,byte}>: pkg_rrd
 <utils/writer.{native,byte}>: pkg_stringext
 <utils/writer.{native,byte}>: pkg_threads
-<utils/writer.{native,byte}>: pkg_xcp.rrd
+<utils/writer.{native,byte}>: pkg_xcp.rrd_ppx
 <utils/writer.{native,byte}>: pkg_xen-gnt
 <utils/writer.{native,byte}>: pkg_xen-gnt.unix
 <utils/writer.{native,byte}>: use_rrd_transport
@@ -60,7 +60,7 @@ true: annot, bin_annot
 <utils/*.ml{,i,y}>: pkg_rrd
 <utils/*.ml{,i,y}>: pkg_stringext
 <utils/*.ml{,i,y}>: pkg_threads
-<utils/*.ml{,i,y}>: pkg_xcp.rrd
+<utils/*.ml{,i,y}>: pkg_xcp.rrd_ppx
 <utils/*.ml{,i,y}>: pkg_xen-gnt
 <utils/*.ml{,i,y}>: pkg_xen-gnt.unix
 <utils/*.ml{,i,y}>: use_rrd_transport
@@ -73,7 +73,7 @@ true: annot, bin_annot
 <test/test_unit.{native,byte}>: pkg_rrd
 <test/test_unit.{native,byte}>: pkg_stringext
 <test/test_unit.{native,byte}>: pkg_threads
-<test/test_unit.{native,byte}>: pkg_xcp.rrd
+<test/test_unit.{native,byte}>: pkg_xcp.rrd_ppx
 <test/test_unit.{native,byte}>: pkg_xen-gnt
 <test/test_unit.{native,byte}>: pkg_xen-gnt.unix
 <test/test_unit.{native,byte}>: use_rrd_transport
@@ -86,7 +86,7 @@ true: annot, bin_annot
 <test/test_scale.{native,byte}>: pkg_rrd
 <test/test_scale.{native,byte}>: pkg_stringext
 <test/test_scale.{native,byte}>: pkg_threads
-<test/test_scale.{native,byte}>: pkg_xcp.rrd
+<test/test_scale.{native,byte}>: pkg_xcp.rrd_ppx
 <test/test_scale.{native,byte}>: pkg_xen-gnt
 <test/test_scale.{native,byte}>: pkg_xen-gnt.unix
 <test/test_scale.{native,byte}>: use_rrd_transport
@@ -98,7 +98,7 @@ true: annot, bin_annot
 <test/*.ml{,i,y}>: pkg_rrd
 <test/*.ml{,i,y}>: pkg_stringext
 <test/*.ml{,i,y}>: pkg_threads
-<test/*.ml{,i,y}>: pkg_xcp.rrd
+<test/*.ml{,i,y}>: pkg_xcp.rrd_ppx
 <test/*.ml{,i,y}>: pkg_xen-gnt
 <test/*.ml{,i,y}>: pkg_xen-gnt.unix
 <test/*.ml{,i,y}>: use_rrd_transport

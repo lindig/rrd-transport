@@ -15,6 +15,8 @@
 open Crc
 open Rrd_protocol
 
+module Ds = Rrd_idl.DS
+
 (* Field sizes. *)
 let default_header = "DATASOURCES"
 

@@ -1,4 +1,5 @@
 open OUnit
+module Ds = Rrd_idl.DS
 
 let test_payload = Rrd_protocol.({
 	timestamp = 1387867223L;
